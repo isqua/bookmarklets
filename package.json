@@ -1,0 +1,24 @@
+{
+  "name": "vk-share-bookmarklet",
+  "version": "0.0.1",
+  "description": "VK share bookmarklet",
+  "main": "button.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isquariel/vk-share-bookmarklet.git"
+  },
+  "author": "isqua <isqua@isqua.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isquariel/vk-share-bookmarklet/issues"
+  },
+  "homepage": "https://github.com/isquariel/vk-share-bookmarklet",
+  "devDependencies": {},
+  "dependencies": {
+    "clean-css": "^3.0.10",
+    "uglify-js": "^2.4.16"
+  }
+}
