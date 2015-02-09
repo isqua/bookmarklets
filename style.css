@@ -4,13 +4,41 @@ body
     font-size: 16px;
     line-height: 1.5;
 
+    max-width: 600px;
+    margin: 0;
+    padding: 0 10%;
+
     color: #111;
     background: #fff;
 }
+nav
+{
+    margin: 40px 0 0;
+    font-size: 13px;
+}
+nav a
+{
+    margin-right: 15px;
+}
 main
 {
-    max-width: 600px;
-    margin: 80px 10%;
+    margin: 40px 0 80px;
+}
+a,
+a:visited
+{
+    color: #1abef1;
+}
+a
+{
+    transition: border-color .15s;
+    text-decoration: none;
+
+    border-bottom: 1px solid rgba(26,190,241,.2);
+}
+a:hover
+{
+    border-bottom-color: #1abef1;
 }
 h1
 {
