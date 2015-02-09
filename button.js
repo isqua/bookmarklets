@@ -4,7 +4,7 @@
         'vksharebookmarklet',
         [
             'left=' + (screen.width/2 - 275),
-            'top=120',
+            'top=' + (screen.height/2 - 165),
             'width=550',
             'height=330',
             'menubar=0',
