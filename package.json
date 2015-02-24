@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/isquariel/vk-share-bookmarklet.git"
+    "url": "https://github.com/isqua/vk-share-bookmarklet.git"
   },
   "author": "isqua <isqua@isqua.ru>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/isquariel/vk-share-bookmarklet/issues"
+    "url": "https://github.com/isqua/vk-share-bookmarklet/issues"
   },
-  "homepage": "https://github.com/isquariel/vk-share-bookmarklet",
+  "homepage": "https://github.com/isqua/vk-share-bookmarklet",
   "devDependencies": {},
   "dependencies": {
     "clean-css": "^3.0.10",
