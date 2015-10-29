@@ -1,1 +1,81 @@
-<!DOCTYPE html><html lang="ru" prefix='og: http://ogp.me/ns#'><head><meta charset="UTF-8"><title>Делитесь интересными материалами в контакте</title><meta name="description" content="Отправляйте друзьям вконтакте красивые ссылки на любые страницы"><meta property="og:type" content="website"><meta property="og:url" content="https://isqua.github.io/vk-share-bookmarklet/"><meta property="og:image" url="http://isqua.github.io/vk-share-bookmarklet/img.png"><meta property="og:title" content="Делитесь интересными материалами в контакте в один клик"><meta property="og:description" content="Отправляйте друзьям вконтакте красивые ссылки на любые страницы"><style type="text/css">body{font-family:Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;max-width:600px;margin:0;padding:0 10%;color:#111;background:#fff}nav{margin:40px 0 0;font-size:13px}nav a{margin-right:15px}main{margin:40px 0 80px}a,a:visited{color:#1abef1}a{transition:border-color .15s;text-decoration:none;border-bottom:1px solid rgba(26,190,241,.2)}a:hover{border-bottom-color:#1abef1}h1{font-family:inherit;font-size:36px;line-height:40px;margin:0 0 30px;color:#333}p{margin:0 0 10px}.button{display:inline-block;margin-left:10px;padding:8px 16px 5px;transition:opacity .2s;text-decoration:none;color:#fff;border-radius:2px;background:#6287ae}.button:hover{opacity:.9}</style></head><body><nav><a href="https://github.com/isqua/vk-share-bookmarklet">Исходный код</a><a href="https://ru.wikipedia.org/wiki/Букмарклет">Что такое букмарклет</a><a href="https://isqua.ru/">isqua.ru</a></nav><main><h1>Делитесь интересными материалами в контакте</h1><section><p>Я часто общаюсь в контакте с друзьями и отправляю им ссылки. Но мне не нравится, что ссылки в сообщениях выглядят мелко и незаметно. В постах они смотрятся лучше: когда вставляешь ссылку в пост, вконтакт подтягивает со страницы заголовок, описание и какую-нибудь картинку. Бывает, что на сайте есть вконтактовская синяя кнопка «Поделиться». Когда на неё кликаешь, открывается окно-поделяшка и можно прислать другу красивую ссылку. Но не на всех сайтах есть такая кнопка, а красивую ссылку отправить хочется. Поэтому вот вам кнопка, которая живёт в закладках. Так можно поделиться любой страницей.</p><p>Просто перетащите эту кнопку на панель закладок: <a class="button" href="javascript:!function(){var o=window.open('https://vk.com/share.php?url='+encodeURIComponent(window.location.href),'vksharebookmarklet',['left='+(screen.width/2-275),'top='+(screen.height/2-165),'width=550','height=330','menubar=0','toolbar=0','location=0','directories=0','resizable=1','scrollbars=1','personalbar=0'].join(','));o&&o.focus()}();">Поделиться</a></p></section></main><script type="text/javascript">!function(t,e,a){(e[a]=e[a]||[]).push(function(){try{e.yaCounter28698696=new Ya.Metrika({id:28698696,clickmap:!0,trackLinks:!0})}catch(t){}});var n=t.getElementsByTagName('script')[0],c=t.createElement('script'),r=function(){n.parentNode.insertBefore(c,n)};c.type='text/javascript',c.async=!0,c.src=('https:'==t.location.protocol?'https:':'http:')+'//mc.yandex.ru/metrika/watch.js','[object Opera]'==e.opera?t.addEventListener('DOMContentLoaded',r,!1):r()}(document,window,'yandex_metrika_callbacks');</script><noscript><div><img src="//mc.yandex.ru/watch/28698696" style="position:absolute; left:-9999px;" alt="" /></div></noscript></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookmarklets</title>
+    <style>
+        body
+        {
+            font-family: sans-serif;
+            font-size: 15px;
+            line-height: 1.5;
+            margin: 0;
+            padding: 4em;
+        }
+
+        main
+        {
+            max-width: 45em;
+        }
+
+        footer
+        {
+            margin: 0;
+            padding: 4em 0 2em;
+        }
+
+        a,
+        a:visited
+        {
+            text-decoration: none;
+
+            color: #1abef1;
+            border-bottom: 1px solid rgba(26,190,241,.2);
+        }
+
+        a:hover
+        {
+            border-bottom-color: #1abef1;
+        }
+
+        dt
+        {
+            display: inline;
+
+            margin-right: .7em;
+        }
+
+        dd::after
+        {
+            display: block;
+
+            margin-bottom: 1em;
+
+            content: '';
+        }
+
+        dd
+        {
+            display: inline;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        h2
+        {
+            margin: 3em 0 .5em;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Bookmarklets</h1>
+        <section id="github"><h2>Github.com</h2><dl><dt><a href="javascript:%24(%22.discussion-item-toggle-closed%22).click()">Show outdated diff</a></dt><dd>Show diff that’s marked as outdated on pull-request page.</dd></dl></section><section id="vsco"><h2>VSCO.co</h2><dl><dt><a href="javascript:var%20v%3Ddocument.querySelector(%22.ember-view.image-wrapper%20video%22)%3Bwindow.open(v%3Fv.currentSrc%3Adocument.querySelector(%22.ember-view.image-wrapper%20img%22).src)">Open media</a></dt><dd>If you are on image or video page, open the media in separate tab. So you can save them or send link to firend</dd></dl></section><section id="vk"><h2>VK.com</h2><dl><dt><a href="javascript:(function()%7Bvar%20e%3Dwindow.open(%22https%3A%2F%2Fvk.com%2Fshare.php%3Furl%3D%22%2BencodeURIComponent(window.location.href)%2C%22vksharebookmarklet%22%2C%5B%22left%3D%22%2B(screen.width%2F2-275)%2C%22top%3D%22%2B(screen.height%2F2-165)%2C%22width%3D550%22%2C%22height%3D330%22%2C%22menubar%3D0%22%2C%22toolbar%3D0%22%2C%22location%3D0%22%2C%22directories%3D0%22%2C%22resizable%3D1%22%2C%22scrollbars%3D1%22%2C%22personalbar%3D0%22%5D.join(%22%2C%22))%3Be%26%26e.focus()%7D)()">Share</a></dt><dd>Share current page in a private message, with your friends or with community subscribers.</dd></dl></section>
+        <footer>
+            <a href="https://github.com/isqua/bookmarklets">Source on Github</a>
+        </footer>
+    </main>
+<script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter28698696 = new Ya.Metrika({ id:28698696, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="https://mc.yandex.ru/watch/28698696" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+</body>
+</html>
