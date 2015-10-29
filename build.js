@@ -1,37 +1,74 @@
-var UglifyJS = require('uglify-js');
-var CleanCSS = require('clean-css');
 var fs = require('fs');
+var path = require('path');
+var Stream = require('stream');
+var uglify = require("uglify-js");
+var gutil = require("gulp-util");
+var bookmarklets = require('./src/index');
 
-var buttonJs = UglifyJS.minify('button.js');
-var metrikaJs = UglifyJS.minify('metrika.js');
-var styleCss = new CleanCSS().minify(fs.readFileSync('style.css').toString('utf8')).styles;
+function getContent(bookmarklets) {
+    return Promise.all(bookmarklets.map(getSection))
+        .then(function(sections) {
+            return sections.join('');
+        });
+}
 
-buttonJs = buttonJs.code.replace(/"/gm, '\'');
-metrikaJs = metrikaJs.code.replace(/"/gm, '\'');
-styleCss = '<style type="text/css">' + styleCss + '</style>';
+function getSection(section) {
+    return Promise.all(section.content.map(getBookmarklet(section.id)))
+        .then(function(bookmarklets) {
+            return [ `<section id="${section.id}"><h2>${section.name}</h2><dl>` ]
+                .concat(bookmarklets)
+                .concat('</dl></section>')
+                .join('');
+        });
+}
 
-fs.readFile('index.html', function(err, data) {
-	var src = data.toString('utf8');
-	var result = '';
+function getBookmarklet(sectionId) {
+    return function (bookmarklet) {
+        return getCode(sectionId, bookmarklet.id)
+            .then(function(code) {
+                return `<dt><a href="${code}">${bookmarklet.name}</a></dt><dd>${bookmarklet.text}</dd>`;
+            });
+    }
+}
 
-	if (err) {
-		console.log(err);
-		return;
-	}
+function getBookmarkletPath(sectionId, bookmarkletId) {
+    return path.resolve(__dirname, `src/bm/${sectionId}/${bookmarkletId}.js`);
+}
 
-	result = src
-		.replace(/(\r\n|\n|\r)/gm, '')
-		.replace(/\s+/gm, ' ')
-		.replace('{{buttonJs}}', buttonJs)
-		.replace('{{metrikaJs}}', metrikaJs)
-		.replace('<link rel="stylesheet" href="style.css">', styleCss)
-		.replace(/>\s</gm, '><');
+function getCode(sectionId, bookmarkletId) {
+    return new Promise(function(resolve, reject) {
+        fs.readFile(getBookmarkletPath(sectionId, bookmarkletId), function(err, data) {
+            var code;
 
-	fs.writeFile('result.html', result, function(err) {
-		if (err) {
-			console.log(err);
-		} else {
-			console.log('done');
-		}
-	});
-});
+            if (err) {
+                return reject(err);
+            }
+
+            code = uglify(data.toString("utf8"));
+            gutil.log('added bookmark: ' + `${sectionId}/${bookmarkletId}`);
+
+            resolve('javascript:' + encodeURIComponent(code));
+        });
+    });
+}
+
+module.exports = function() {
+    var stream = new Stream.Transform({ objectMode: true });
+
+    stream._transform = function(file, encoding, cb) {
+        return getContent(bookmarklets)
+            .then(function(content) {
+                var newContent = file.contents
+                    .toString("utf8")
+                    .replace("{{content}}", content);
+
+                file.contents = new Buffer(newContent);
+
+                cb(null, file);
+            }, function(error) {
+                cb(error, null);
+            });
+    };
+
+    return stream;
+};
