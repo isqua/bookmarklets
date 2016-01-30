@@ -29,6 +29,11 @@ module.exports = [
                 name: "Share",
                 id: "share",
                 text: "Share current page in a private message, with your friends or with community subscribers."
+            },
+            {
+                name: "Save audio",
+                id: "save-audio",
+                text: "Save audio wich is playing at the moment."
             }
         ]
     }
