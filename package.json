@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/isqua/vk-share-bookmarklet",
   "devDependencies": {
+    "browser-sync": "^2.11.1",
     "gulp": "^3.9.0",
     "gulp-util": "^3.0.7",
+    "nbld": "git://github.com/isqua/nbld.git#next",
     "uglify-js": "^1.3.5"
   },
   "dependencies": {}

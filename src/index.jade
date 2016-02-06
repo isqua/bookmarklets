@@ -1,0 +1,85 @@
+doctype html
+html(lang="en")
+    head
+        title Bookmarklets
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+        link(rel="stylesheet", type="text/css", href="//fonts.googleapis.com/css?family=PT+Serif:400,700,700italic,400italic|PT+Sans:700,400")
+        style.
+            body {
+                font-family: 'PT Sans', sans-serif;
+                font-size: 15px;
+                line-height: 1.5;
+                margin: 0;
+                padding: 4em;
+            }
+
+            main {
+                max-width: 45em;
+            }
+
+            footer {
+                margin: 0;
+                padding: 4em 0 2em;
+            }
+
+            a,
+            a:visited {
+                text-decoration: none;
+
+                color: #1abef1;
+                border-bottom: 1px solid rgba(26, 190, 241, .2);
+            }
+
+            a:hover {
+                border-bottom-color: #1abef1;
+            }
+
+            dt {
+                display: inline;
+
+                margin-right: .7em;
+            }
+
+            dd::after {
+                display: block;
+
+                margin-bottom: 1em;
+
+                content: '';
+            }
+
+            dd {
+                display: inline;
+
+                margin: 0;
+                padding: 0;
+            }
+
+            h1, h2 { font-family: 'PT Sans', sans-serif; }
+
+            h2 {
+                margin: 3em 0 .5em;
+            }
+
+            .star { margin-left: -35px; position: absolute; }
+    body
+        main
+            h1
+                span.star ★
+                | Bookmarklets
+
+            each section in sections
+                section(id=section.id)
+                    h2 #{section.name}
+                    dl
+                        each bookmarklet in section.content
+                            dt
+                                a(href=bookmarklet.code) #{bookmarklet.name}
+                            dd #{bookmarklet.text}
+
+            footer
+                | © isqua
+                a(href="/") Other projects
+                a(href="https://github.com/isqua/bookmarklets") Source code
