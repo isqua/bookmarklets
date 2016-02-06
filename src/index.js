@@ -1,5 +1,22 @@
 module.exports = [
     {
+        name: '',
+        id: 'common',
+        content: [
+            {
+                name: 'Save video',
+                id: 'save-video',
+                text: 'May open video from Instagram, VSCO at separate tab so you can save it'
+            },
+            {
+                name: 'Save audio',
+                id: 'save-audio',
+                text: 'May open audio which is playing at the moment at, perhaps, vk.com at separate tab so you can save it'
+            }
+        ]
+
+    },
+    {
         name: "Github.com",
         id: "github",
         content: [
@@ -29,11 +46,6 @@ module.exports = [
                 name: "Share",
                 id: "share",
                 text: "Share current page in a private message, with your friends or with community subscribers."
-            },
-            {
-                name: "Save audio",
-                id: "save-audio",
-                text: "Save audio wich is playing at the moment."
             }
         ]
     }
