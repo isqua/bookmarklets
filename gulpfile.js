@@ -5,12 +5,12 @@ const dest = 'build';
 const browserSync = require('browser-sync').create();
 
 const config = {
-    jade: {
+    pug: {
         src: 'src/index.jade',
         dest: dest,
         metrika: 28698696,
-        opts: {
-            locals: { sections: sections() }
+        data: {
+            sections: sections()
         }
     }
 };
@@ -23,10 +23,10 @@ gulp.task('server', () => {
     });
 });
 
-require('nbld/tasks/jade')(gulp, config.jade);
+require('nbld/tasks/pug')(gulp, config.pug);
 
-gulp.task('default', [ 'jade:development', 'server' ], () => {
-    gulp.watch(config.jade.src, [ 'jade:development', browserSync.reload ]);
+gulp.task('default', [ 'pug:development', 'server' ], () => {
+    gulp.watch(config.pug.src, [ 'pug:development', browserSync.reload ]);
 });
 
-gulp.task('production', [ 'jade:production' ]);
+gulp.task('production', [ 'pug:production' ]);

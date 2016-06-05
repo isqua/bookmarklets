@@ -1,7 +1,7 @@
 var fs = require('fs');
 var path = require('path');
-var uglify = require("uglify-js");
-var gutil = require("gulp-util");
+var uglify = require('uglify-js');
+var gutil = require('gulp-util');
 var bookmarklets = require('./src/index');
 
 function getContent(bookmarklets) {
@@ -29,11 +29,11 @@ function getBookmarklet(sectionId) {
 
 function getCode(sectionId, bookmarkletId) {
     var data = fs.readFileSync(getBookmarkletPath(sectionId, bookmarkletId));
-    var code = uglify(data.toString("utf8"));
+    var res = uglify.minify(data.toString('utf8'),  { fromString: true });
 
     gutil.log('added bookmark: ' + `${sectionId}/${bookmarkletId}`);
 
-    return 'javascript:' + encodeURIComponent(code);
+    return 'javascript:' + encodeURIComponent(res.code);
 }
 
 function getBookmarkletPath(sectionId, bookmarkletId) {
