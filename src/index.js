@@ -24,6 +24,16 @@ module.exports = [
                 name: "Show outdated diff",
                 id: "showdiff",
                 text: "Show diff that’s marked as outdated on pull-request page."
+            },
+            {
+                name: "Hide outdated diff",
+                id: "hidediff",
+                text: "Hide diff that’s marked as outdated on pull-request page."
+            },
+            {
+                name: "Show/hide outdated diff",
+                id: "togglediff",
+                text: "Show hidden outdated diffs and hide shown ones."
             }
         ]
     },

@@ -1,1 +1,4 @@
-Array.prototype.forEach.call(document.querySelectorAll('.discussion-item-toggle-closed'), function(e) { e.click() })
+Array.prototype.forEach.call(
+    document.querySelectorAll('.has-inline-notes:not(.open) .show-outdated-button'),
+    function(b) { b.click() }
+)
