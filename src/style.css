@@ -1,0 +1,142 @@
+html
+{
+    font-family: 'PT Serif', Georgia, serif;
+    font-size: 100%;
+    line-height: 1.6;
+
+    color: #000;
+    background: #fff;
+}
+
+body
+{
+    font-size: 1rem;
+
+    margin: 1em;
+}
+
+@media (min-width: 20rem)
+{
+    body
+    {
+        font-size: calc(1rem + .0125 * (100vw - 20rem));
+    }
+}
+
+@media (min-width: 40rem)
+{
+    body
+    {
+        font-size: 1.25rem;
+    }
+}
+
+a,
+a:visited
+{
+    transition: border-bottom-color .15s;
+    text-decoration: none;
+
+    color: #1abef1;
+    border-bottom: 1px solid rgba(26, 190, 241, .2);
+}
+
+a:hover
+{
+    border-bottom-color: #1abef1;
+}
+
+main,
+footer
+{
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+.explanation
+{
+    color: #666;
+    font-size: .9em;
+    line-height: 1.1;
+    margin: 1em 0 2em;
+}
+
+.bookmarklet,
+.bookmarklet:visited
+{
+    font-family: PT Sans;
+    font-size: 1.1rem;
+    line-height: 1.1;
+
+    cursor: move;
+    padding: 2px 6px;
+
+    transition: background-color .15s, color .15s;
+    text-decoration: none;
+
+    color: #1abef1;
+    border: 1px solid rgba(26, 190, 241, .2);
+    border-radius: 3px;
+    margin-left: -2px;
+}
+
+.bookmarklet:hover
+{
+    color: #fff;
+    border-color: #1abef1;
+    background-color: #1abef1;
+}
+
+dd
+{
+    margin: 0 0 .8em;
+}
+
+
+h1
+{
+    font-size: 1.75em;
+    margin: 0;
+    line-height: 1;
+}
+
+h2
+{
+    line-height: 1;
+    font-size: 1.25em;
+    margin: 0 0 0;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+footer a,
+footer a:visited
+{
+    margin-left: 1em;
+
+    transition: border-bottom-color .15s;
+    text-decoration: none;
+
+    color: #1abef1;
+    border-bottom: 1px solid rgba(26, 190, 241, .2);
+}
+
+h1
+{
+    position: relative;
+}
+
+h1::before
+{
+    font-size: .8em;
+
+    position: absolute;
+    top: .15em;
+    right: 101%;
+
+    content: '★';
+    vertical-align: bottom;
+    color: #d0f2fd;
+}

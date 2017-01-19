@@ -4,6 +4,8 @@
   "description": "VK share bookmarklet",
   "main": "button.js",
   "scripts": {
+    "start": "gulp development",
+    "build": "gulp production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,13 +19,11 @@
   },
   "homepage": "https://github.com/isqua/vk-share-bookmarklet",
   "devDependencies": {
-    "browser-sync": "^2.12.12",
-    "gulp": "^3.9.1",
-    "gulp-data": "^1.2.1",
-    "gulp-pug": "^3.0.3",
-    "gulp-util": "^3.0.7",
-    "nbld": "git://github.com/isqua/nbld.git#next",
-    "uglify-js": "^2.6.2"
+    "gulp": "3.9.1",
+    "gulp-inline-source": "3.0.0",
+    "gulp-pug": "3.2.0",
+    "uglify-js": "2.6.2",
+    "vinyl-map": "1.0.2"
   },
   "dependencies": {}
 }

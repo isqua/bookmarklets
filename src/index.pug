@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+    head
+        title Bookmarklets
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+        link(rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,700|PT+Sans:400")
+        link(rel="stylesheet" inline href="../src/style.css")
+    body
+        main
+            h1 Bookmarklets
+
+            p.explanation
+                | Drag bookmarklet and drop it into bookmarks panel in your browser.
+                br
+                a(href="https://en.wikipedia.org/wiki/Bookmarklet") What is bookmarklet?
+
+            each section in sections
+                section(id=section.id)
+                    h2 #{section.name}
+                    dl
+                        each bookmarklet in section.content
+                            dt
+                                a.bookmarklet(href=bookmarklet.code) #{bookmarklet.name}
+                            dd #{bookmarklet.text}
+
+            footer
+                | © isqua
+                a(href="/") Other projects
+                a(href="https://github.com/isqua/bookmarklets") Source code

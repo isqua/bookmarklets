@@ -1,32 +1,33 @@
-const sections = require('./sections');
-const gulp = require('gulp');
-const src = 'src';
-const dest = 'build';
-const browserSync = require('browser-sync').create();
+var gulp = require('gulp');
+var pug = require('gulp-pug');
+var inlinesource = require('gulp-inline-source');
+var metrika = require('./gulp/metrika');
 
-const config = {
-    pug: {
-        src: 'src/index.jade',
-        dest: dest,
-        metrika: 28698696,
-        data: {
-            sections: sections()
-        }
-    }
-};
+function getData() {
+    var sectionsFile = require.resolve('./sections')
 
-gulp.task('server', () => {
-    browserSync.init({
-        server: {
-            baseDir: dest
-        }
-    });
+    delete require.cache[sectionsFile];
+
+    return {
+        sections: require(sectionsFile)()
+    };
+}
+
+gulp.task('html', function() {
+    return gulp.src('src/index.pug')
+        .pipe(pug({
+            data: getData()
+        }))
+        .pipe(inlinesource())
+        .pipe(metrika(28698696))
+        .pipe(gulp.dest('build/'));
 });
 
-require('nbld/tasks/pug')(gulp, config.pug);
+gulp.task('production', [ 'html' ]);
 
-gulp.task('default', [ 'pug:development', 'server' ], () => {
-    gulp.watch(config.pug.src, [ 'pug:development', browserSync.reload ]);
+gulp.task('development', [ 'html' ], function functionName() {
+    gulp.watch(
+        [ 'src/**/*.{pug,css,js}', 'sections.js' ],
+        [ 'html' ]
+    );
 });
-
-gulp.task('production', [ 'pug:production' ]);
