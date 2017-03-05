@@ -34,6 +34,16 @@ module.exports = [
                 name: "Show/hide outdated diff",
                 id: "togglediff",
                 text: "Show hidden outdated diffs and hide shown ones."
+            },
+            {
+                name: "Show outdated diff without :tada: reaction",
+                id: "shownothooray",
+                text: "Show outdated diff where comments doesn’t have :tada: (:hooray:) reaction. You may mark comments with hooray when it’s fixed properly."
+            },
+            {
+                name: "Show outdated diff without my :tada: reaction",
+                id: "shownotmyhooray",
+                text: "Show outdated diff where comments doesn’t have :tada: reaction from you. Like previous but prevent mistakes when someone else add the reaction."
             }
         ]
     },
