@@ -110,17 +110,14 @@ h2
 section {
     margin-bottom: 2em;
 }
-
 footer a,
-footer a:visited
+footer iframe {
+    margin-left: 20px;
+}
+
+footer iframe
 {
-    margin-left: 1em;
-
-    transition: border-bottom-color .15s;
-    text-decoration: none;
-
-    color: #1abef1;
-    border-bottom: 1px solid rgba(26, 190, 241, .2);
+    vertical-align: middle;
 }
 
 h1
