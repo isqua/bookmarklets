@@ -48,6 +48,17 @@ module.exports = [
         ]
     },
     {
+        name: 'Codewars.com',
+        id: 'codewars',
+        content: [
+            {
+                name: "Filter Dashboard by Clan",
+                id: "filterclan",
+                text: "Show warriors on dashboard from specific clans only"
+            }
+        ]
+    },
+    {
         name: "VSCO.co",
         id: "vsco",
         content: [
