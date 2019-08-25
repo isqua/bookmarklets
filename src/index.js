@@ -4,6 +4,11 @@ module.exports = [
         id: 'common',
         content: [
             {
+                name: 'Copy Title & URL',
+                id: 'copy-title-url',
+                text: 'Copy Title & URL of current page to Clipboard'
+            },
+            {
                 name: 'Save video',
                 id: 'save-video',
                 text: 'May open video from Instagram, VSCO at separate tab so you can save it'
