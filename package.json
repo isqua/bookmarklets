@@ -1,8 +1,8 @@
 {
-  "name": "vk-share-bookmarklet",
+  "name": "bookmarklets",
   "version": "0.0.1",
-  "description": "VK share bookmarklet",
-  "main": "button.js",
+  "description": "Small collection of my bookmarklets",
+  "private": true,
   "scripts": {
     "start": "gulp development",
     "build": "gulp production",
@@ -10,18 +10,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/isqua/vk-share-bookmarklet.git"
+    "url": "https://github.com/isqua/bookmarklets.git"
   },
   "author": "isqua <isqua@isqua.ru>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/isqua/vk-share-bookmarklet/issues"
+    "url": "https://github.com/isqua/bookmarklets/issues"
   },
-  "homepage": "https://github.com/isqua/vk-share-bookmarklet",
+  "homepage": "https://github.com/isqua/bookmarklets",
   "devDependencies": {
-    "gulp": "3.9.1",
-    "gulp-inline-source": "3.0.0",
-    "gulp-pug": "3.2.0",
+    "gulp": "4.0.2",
+    "gulp-inline-source": "4.0.0",
+    "gulp-pug": "4.0.1",
     "uglify-es": "3.3.9",
     "vinyl-map": "1.0.2"
   },
