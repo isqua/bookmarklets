@@ -9,6 +9,11 @@ module.exports = [
                 text: 'Copy Title & URL of current page to Clipboard'
             },
             {
+                name: 'Copy Title & URL in Markdown',
+                id: 'copy-title-url-md',
+                text: 'Copy Title & URL of current page to Clipboard as a markdown link'
+            },
+            {
                 name: 'Save video',
                 id: 'save-video',
                 text: 'May open video from Instagram, VSCO at separate tab so you can save it'
