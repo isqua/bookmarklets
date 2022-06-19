@@ -110,7 +110,7 @@ h2
 section {
     margin-bottom: 2em;
 }
-footer a,
+
 footer iframe {
     margin-left: 20px;
 }
@@ -136,4 +136,8 @@ h1::before
     content: '★';
     vertical-align: bottom;
     color: #d0f2fd;
+}
+
+.more {
+    float: right;
 }
