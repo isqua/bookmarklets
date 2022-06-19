@@ -13,6 +13,22 @@ module.exports = [
                 id: 'copy-title-url-md',
                 text: 'Copy Title & URL of current page to Clipboard as a markdown link'
             },
+        ]
+    },
+    {
+        name: 'Media',
+        id: 'media',
+        content: [
+            {
+                name: 'Media +10%',
+                id: 'media-speed-faster',
+                text: 'Speed up currently playing video (perhaps on YouTube) or audio by 10%. Is very useful in Safari where you don’t have Video Speed Controller extension.'
+            },            
+            {
+                name: 'Media -10%',
+                id: 'media-speed-slower',
+                text: 'Slow down currently playing video or audio.'
+            },
             {
                 name: 'Save video',
                 id: 'save-video',
@@ -24,7 +40,6 @@ module.exports = [
                 text: 'May open audio which is playing at the moment at, perhaps, vk.com at separate tab so you can save it'
             }
         ]
-
     },
     {
         name: "Github.com",
