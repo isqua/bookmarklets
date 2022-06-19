@@ -27,14 +27,11 @@ html(lang="en")
 
             footer
                 | © isqua
-                <!-- Place this tag where you want the button to render. -->
-                a.github-button(
-                    href="https://github.com/isqua/bookmarklets"
-                    data-icon="octicon-star"
-                    data-style="mega"
-                    data-count-href="/isqua/bookmarklets/stargazers"
-                    data-count-api="/repos/isqua/bookmarklets#stargazers_count"
-                    data-count-aria-label="# stargazers on GitHub"
-                    aria-label="Star isqua/bookmarklets on GitHub") Star
-
-        script(async defer src="https://buttons.github.io/buttons.js")
+                iframe(
+                    src="https://ghbtns.com/github-btn.html?user=isqua&repo=bookmarklets&type=star&count=true"
+                    frameborder="0"
+                    scrolling="0"
+                    width="150"
+                    height="20"
+                    title="Star these bookmarklets on Github"
+                )
