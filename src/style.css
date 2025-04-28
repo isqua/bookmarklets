@@ -62,7 +62,8 @@ footer
 }
 
 .bookmarklet,
-.bookmarklet:visited
+.bookmarklet:visited,
+.copy
 {
     font-family: PT Sans;
     font-size: 1.1rem;
@@ -80,11 +81,18 @@ footer
     margin-left: -2px;
 }
 
-.bookmarklet:hover
+.bookmarklet:hover,
+.copy:hover
 {
     color: #fff;
     border-color: #1abef1;
     background-color: #1abef1;
+}
+
+.copy {
+    margin-left: 1rem;
+    background-color: #fff;
+    cursor: pointer;
 }
 
 dd

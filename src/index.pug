@@ -23,6 +23,7 @@ html(lang="en")
                         each bookmarklet in section.content
                             dt
                                 a.bookmarklet(href=bookmarklet.code) #{bookmarklet.name}
+                                button.copy(type=button data-code=bookmarklet.code aria-label="Copy code") Copy
                             dd #{bookmarklet.text}
 
             footer
@@ -36,3 +37,5 @@ html(lang="en")
                     title="Star these bookmarklets on Github"
                 )
                 a.more(href="https://isqua.github.io") Other Projects
+
+            script(inline src="../src/script.js")
