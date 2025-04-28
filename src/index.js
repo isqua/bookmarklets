@@ -30,6 +30,11 @@ module.exports = [
                 text: 'Slow down currently playing video or audio.'
             },
             {
+                name: 'Open YouTube Live',
+                id: 'open-youtube-live',
+                text: 'If you join a webinar late and want to rewind the stream, try using this bookmarklet. If the webinar is being streamed from YouTube, it will give you a private video link'
+            },
+            {
                 name: 'Save video',
                 id: 'save-video',
                 text: 'May open video from Instagram, VSCO at separate tab so you can save it'
