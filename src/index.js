@@ -30,6 +30,11 @@ module.exports = [
                 text: 'Slow down currently playing video or audio.'
             },
             {
+                name: 'Toggle Media Controls',
+                id: 'media-controls',
+                text: 'Show/hide controls for currently playing video or audio.'
+            },
+            {
                 name: 'Open YouTube Live',
                 id: 'open-youtube-live',
                 text: 'If you join a webinar late and want to rewind the stream, try using this bookmarklet. If the webinar is being streamed from YouTube, it will give you a private video link'
