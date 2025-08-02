@@ -13,6 +13,11 @@ module.exports = [
                 id: 'copy-title-url-md',
                 text: 'Copy Title & URL of current page to Clipboard as a markdown link'
             },
+            {
+                name: 'Open RSS feed',
+                id: 'open-rss',
+                text: 'Finds & opens RSS feed of current page in a new tab'
+            },
         ]
     },
     {
