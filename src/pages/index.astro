@@ -1,0 +1,82 @@
+---
+import '../style.css';
+
+import { getCollection } from "astro:content";
+
+const bookmarklets = (await getCollection("bookmarklets")).reduce<Record<string, string>>((acc, bm) => {
+  acc[bm.id] = bm.data.code;
+  return acc;
+}, {});
+
+const sections = (await getCollection("sections")).map(s => ({
+  ...s.data,
+  content: s.data.content.map(bookmarklet => ({
+    ...bookmarklet,
+    code: bookmarklets[`${s.id}/${bookmarklet.id}`] ?? '',
+  })),
+}));
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bookmarklets</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Serif:400,700|PT+Sans:400" />
+  </head>
+  <body>
+    <main>
+      <h1>Bookmarklets</h1>
+
+      <p class="explanation">
+        Drag bookmarklet and drop it into bookmarks panel in your browser.<br />
+        <a href="https://en.wikipedia.org/wiki/Bookmarklet">What is bookmarklet?</a>
+      </p>
+
+      {sections.map((section) => (
+        <section id={section.id}>
+          <h2>{section.name}</h2>
+          <dl>
+            {section.content.map((bookmarklet) => (
+              <>
+                <dt>
+                  <a class="bookmarklet" href={bookmarklet.code}>{bookmarklet.name}</a>
+                  <button
+                    class="copy"
+                    type="button"
+                    data-code={bookmarklet.code}
+                    aria-label="Copy code"
+                  >
+                    Copy
+                  </button>
+                </dt>
+                <dd>{bookmarklet.text}</dd>
+              </>
+            ))}
+          </dl>
+        </section>
+      ))}
+    </main>
+
+    <footer>
+      © isqua
+      <iframe
+        src="https://ghbtns.com/github-btn.html?user=isqua&repo=bookmarklets&type=star&count=true"
+        frameborder="0"
+        scrolling="0"
+        width="150"
+        height="20"
+        title="Star these bookmarklets on Github"
+      ></iframe>
+      <a class="more" href="https://isqua.github.io">Other Projects</a>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+  <!-- Yandex.Metrika counter -->
+  <script title="metrika">(function(m,e,t,r,i,k,a){         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};         m[i].l=1*new Date();         for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}         k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)     })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');      ym(28698696, 'init', {clickmap:true, accurateTrackBounce:true, trackLinks:true});</script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/28698696" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+</html>

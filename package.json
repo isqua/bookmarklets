@@ -1,11 +1,13 @@
 {
   "name": "bookmarklets",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "Small collection of my bookmarklets",
   "private": true,
   "scripts": {
-    "start": "gulp development",
-    "build": "gulp production",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
@@ -18,12 +20,8 @@
     "url": "https://github.com/isqua/bookmarklets/issues"
   },
   "homepage": "https://github.com/isqua/bookmarklets",
-  "devDependencies": {
-    "gulp": "4.0.2",
-    "gulp-inline-source": "4.0.0",
-    "gulp-pug": "5.0.0",
-    "uglify-es": "3.3.9",
-    "vinyl-map": "1.0.2"
-  },
-  "dependencies": {}
+  "dependencies": {
+    "astro": "^5.12.8",
+    "esbuild": "^0.25.0"
+  }
 }
