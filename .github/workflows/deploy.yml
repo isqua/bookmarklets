@@ -1,13 +1,12 @@
-name: Publish Github Pages
+name: Deploy to Github Pages
 
 on:
   push:
     branches:
       - main
-  pull_request:
 
 jobs:
-  publish-gh-pages:
+  deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
