@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/isqua/bookmarklets",
   "dependencies": {
-    "astro": "^5.15.6",
+    "astro": "^5.15.9",
     "esbuild": "^0.25.0"
   }
 }
