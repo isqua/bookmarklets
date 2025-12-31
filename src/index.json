@@ -67,6 +67,17 @@
         ]
     },
     {
+        "name": "Github",
+        "id": "github",
+        "content": [
+            {
+                "name": "Load all hidden conversations",
+                "id": "load-hidden-conversations",
+                "text": "If there’re many comments in Github Pull Request, some of them are hidden under the “Load more” button. This bookmarklet loads all these hidden comments"
+            }
+        ]
+    },
+    {
         "name": "Codewars.com",
         "id": "codewars",
         "content": [
